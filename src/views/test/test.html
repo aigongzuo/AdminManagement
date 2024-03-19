@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    .flex-container {
+      display: flex;
+      border: 1px solid #08f543;
+    }
+
+    .flex-item {
+      text-align: center;
+    }
+
+    /* .flex-item {
+      padding: 10px;
+      margin: 5px;
+      border: 1px solid #ddd;
+      width: 100px;
+      height: 100px;
+      background-color: #3498db;
+    } */
+
+    /* 不同的 flex-direction 值 */
+    .row {
+      flex-direction: row;
+    }
+
+    .row-reverse {
+      flex-direction: row-reverse;
+    }
+
+    .column {
+      flex-direction: column;
+    }
+
+    .column-reverse {
+      flex-direction: column-reverse;
+    }
+
+    .z1 {
+      position: absolute;
+      z-index: 1;
+    }
+
+    .z2 {
+      position: absolute;
+      z-index: 2;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>flex-direction 1示例</h2>
+
+  <div style="width: 300px; height: 400px; position: relative; background-color: #f50808;">
+    <div class="flex-container row z1">
+      <div class="flex-item" style="width: 100px; height: 100px;">1 </div>
+      <div class="flex-item">2</div>
+      <div class="flex-item">3</div>
+    </div>
+
+
+    <div class="flex-container column z2">
+      <div class="flex-item">1</div>
+      <div class="flex-item">2</div>
+      <div class="flex-item">3</div>
+    </div>
+  </div>
+
+  <h2>flex-direction 3示例</h2>
+
+  <!-- <div class="flex-container row-reverse">
+  <div class="flex-item">1</div>
+  <div class="flex-item">2</div>
+  <div class="flex-item">3</div>
+</div> -->
+  <!-- 
+<div class="flex-container column-reverse">
+  <div class="flex-item">1</div>
+  <div class="flex-item">2</div>
+  <div class="flex-item">3</div>
+</div> -->
+
+</body>
+
+</html>
