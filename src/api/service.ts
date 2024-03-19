@@ -1,6 +1,5 @@
 import axios, { type AxiosInstance, type AxiosRequestConfig } from "axios"
 import { ElMessage } from "element-plus"
-import { get, merge } from "lodash-es"
 import { clearUserInfo, getToken } from "@/stores/user"
 
 
@@ -59,7 +58,9 @@ function createService() {
     },
     (error) => {
       // status 是 HTTP 状态码
-      const status = get(error, "response.status")
+      const status = error?.response?.status;
+      console.log("status:"+status)
+
       switch (status) {
         case 400:
           error.message = "请求错误"
@@ -124,7 +125,10 @@ function createRequest(service: AxiosInstance) {
       data: {}
     }
     // 将默认配置 defaultConfig 和传入的自定义配置 config 进行合并成为 mergeConfig
-    const mergeConfig = merge(defaultConfig, config)
+    const mergeConfig: AxiosRequestConfig = {
+      ...defaultConfig,
+      ...config
+    };
     return service(mergeConfig)
   }
 }
